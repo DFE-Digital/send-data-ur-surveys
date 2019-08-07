@@ -1,0 +1,30 @@
+{% extends 'layout.html' %}
+
+{% block pageTitle %}
+    Complete
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+
+        <div class="govuk-grid-column-two-thirds">
+
+            <form method="post">
+
+                {{ govukPanel({
+                    titleText: "Thank you",
+                    html: "Your responses have been sent"
+                  }) }}
+
+                <p>
+                    Thank you for your participation. You may now close this window.
+                </p>
+
+            </form>
+
+        </div>
+
+</div>
+
+{% endblock %}

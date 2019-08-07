@@ -1,0 +1,49 @@
+{% extends 'layout.html' %}
+
+{% block pageTitle %}
+    What were your overall thoughts about the prototype?
+{% endblock %}
+
+{% block beforeContent %}
+
+    {{ govukBackLink ({
+        text: 'Back',
+        href: 'javascript:history.back()'
+    }) }}
+
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+
+        <div class="govuk-grid-column-two-thirds">
+
+            <form method="post" action="/surveys/usability/submit">
+
+                <h1 class="govuk-heading-xl">What were your overall thoughts about the prototype?</h1>
+
+                {{ govukTextarea ({
+                    id: 'comments',
+                    name: 'comments',
+                    value: data['comments'] if data['comments'] else '',
+                    label: {
+                        text: 'What were your overall thoughts about the prototype?',
+                        classes: 'govuk-visually-hidden'
+                    },
+                    hint: {
+                        text: 'You can leave this answer blank if you have no further comments.'
+                    }
+                }) }}
+
+                {{ govukButton ({
+                    html: 'Continue'
+                }) }}
+
+            </form>
+
+        </div>
+
+</div>
+
+{% endblock %}

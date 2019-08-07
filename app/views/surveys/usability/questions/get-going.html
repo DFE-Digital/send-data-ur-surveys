@@ -1,0 +1,72 @@
+{% extends 'layout.html' %}
+
+{% block pageTitle %}
+    I needed to learn a lot of things before I could get going with this website
+{% endblock %}
+
+{% block beforeContent %}
+
+    {{ govukBackLink ({
+        text: 'Back',
+        href: 'javascript:history.back()'
+    }) }}
+
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+
+        <div class="govuk-grid-column-two-thirds">
+
+            <form action="comments">
+
+                {{ govukRadios ({
+                    idPrefix: 'get-going',
+                    name: 'get-going',
+                    classes: 'validate-radio',
+                    fieldset: {
+                        legend: {
+                            text: 'I needed to learn a lot of things before I could get going with this website',
+                            isPageHeading: true,
+                            classes: 'govuk-fieldset__legend--xl'
+                        }
+                    },
+                    hint: {
+                        text: 'Rate how you feel about the statement'
+                    },
+                    items: [
+                        {
+                            text: 'Strongly agree',
+                            value: 5
+                        },
+                        {
+                            text: 'Agree',
+                            value: 4
+                        },
+                        {
+                            text: 'Neutral',
+                            value: 3
+                        },
+                        {
+                            text: 'Disagree',
+                            value: 2
+                        },
+                        {
+                            text: 'Strongly disagree',
+                            value: 1
+                        }
+                    ]
+                }) }}
+
+                {{ govukButton ({
+                    html: 'Continue'
+                }) }}
+
+            </form>
+
+        </div>
+
+</div>
+
+{% endblock %}

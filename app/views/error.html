@@ -1,0 +1,22 @@
+{% extends 'layout.html' %} {% block pageTitle %} Error {% endblock %} {% block
+content %}
+
+<div class="govuk-grid-row">
+	<div class="govuk-grid-column-two-thirds">
+		<form method="post">
+			{{
+				govukPanel({
+					titleText: 'There has been an error',
+					html: 'Your responses have not been sent'
+				})
+			}}
+
+			<p>
+				Please let us know there has been a problem by contacting a user
+				researcher.
+			</p>
+		</form>
+	</div>
+</div>
+
+{% endblock %}
